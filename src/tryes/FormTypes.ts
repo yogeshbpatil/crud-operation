@@ -1,5 +1,5 @@
-// src/types/FormTypes.ts
 export interface FormData {
+  id?: string; // Add this line
   name: string;
   mobileNumber: string;
   email: string;
