@@ -1,7 +1,6 @@
-// src/components/UserForm.tsx
+// src/pages/Form/UserForm.tsx
 import React, { useState } from 'react';
 import { FormErrors, FormData } from '../../tryes/FormTypes';
-// import { FormData, FormErrors } from '../types/FormTypes';
 
 const UserForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -124,122 +123,122 @@ const UserForm: React.FC = () => {
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
-        <div className="col-md-8">
+        <div className="col-md-10">
           <div className="card shadow">
             <div className="card-header bg-primary text-white">
               <h2 className="text-center mb-0">User Registration Form</h2>
             </div>
             <div className="card-body">
               <form onSubmit={handleSubmit} noValidate>
-                {/* Name Field */}
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">
-                    Full Name <span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className={`form-control ${errors.name ? 'is-invalid' : ''}`}
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Enter your full name"
-                  />
-                  {errors.name && (
-                    <div className="invalid-feedback">{errors.name}</div>
-                  )}
+                {/* Name and Mobile Number in same row */}
+                <div className="row">
+                  <div className="col-md-6 mb-3">
+                    <label htmlFor="name" className="form-label">
+                      Full Name <span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Enter your full name"
+                    />
+                    {errors.name && (
+                      <div className="invalid-feedback">{errors.name}</div>
+                    )}
+                  </div>
+                  <div className="col-md-6 mb-3">
+                    <label htmlFor="mobileNumber" className="form-label">
+                      Mobile Number <span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      className={`form-control ${errors.mobileNumber ? 'is-invalid' : ''}`}
+                      id="mobileNumber"
+                      name="mobileNumber"
+                      value={formData.mobileNumber}
+                      onChange={handleChange}
+                      placeholder="Enter 10-digit mobile number"
+                      maxLength={10}
+                    />
+                    {errors.mobileNumber && (
+                      <div className="invalid-feedback">{errors.mobileNumber}</div>
+                    )}
+                  </div>
                 </div>
 
-                {/* Mobile Number Field */}
-                <div className="mb-3">
-                  <label htmlFor="mobileNumber" className="form-label">
-                    Mobile Number <span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    className={`form-control ${errors.mobileNumber ? 'is-invalid' : ''}`}
-                    id="mobileNumber"
-                    name="mobileNumber"
-                    value={formData.mobileNumber}
-                    onChange={handleChange}
-                    placeholder="Enter 10-digit mobile number"
-                    maxLength={10}
-                  />
-                  {errors.mobileNumber && (
-                    <div className="invalid-feedback">{errors.mobileNumber}</div>
-                  )}
+                {/* Email and Date of Birth in same row */}
+                <div className="row">
+                  <div className="col-md-6 mb-3">
+                    <label htmlFor="email" className="form-label">
+                      Email Address <span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Enter your email address"
+                    />
+                    {errors.email && (
+                      <div className="invalid-feedback">{errors.email}</div>
+                    )}
+                  </div>
+                  <div className="col-md-6 mb-3">
+                    <label htmlFor="dateOfBirth" className="form-label">
+                      Date of Birth <span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="date"
+                      className={`form-control ${errors.dateOfBirth ? 'is-invalid' : ''}`}
+                      id="dateOfBirth"
+                      name="dateOfBirth"
+                      value={formData.dateOfBirth}
+                      onChange={handleChange}
+                    />
+                    {errors.dateOfBirth && (
+                      <div className="invalid-feedback">{errors.dateOfBirth}</div>
+                    )}
+                  </div>
                 </div>
 
-                {/* Email Field */}
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label">
-                    Email Address <span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Enter your email address"
-                  />
-                  {errors.email && (
-                    <div className="invalid-feedback">{errors.email}</div>
-                  )}
-                </div>
-
-                {/* Date of Birth Field */}
-                <div className="mb-3">
-                  <label htmlFor="dateOfBirth" className="form-label">
-                    Date of Birth <span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="date"
-                    className={`form-control ${errors.dateOfBirth ? 'is-invalid' : ''}`}
-                    id="dateOfBirth"
-                    name="dateOfBirth"
-                    value={formData.dateOfBirth}
-                    onChange={handleChange}
-                  />
-                  {errors.dateOfBirth && (
-                    <div className="invalid-feedback">{errors.dateOfBirth}</div>
-                  )}
-                </div>
-
-                {/* Address Line 1 */}
-                <div className="mb-3">
-                  <label htmlFor="addressLine1" className="form-label">
-                    Address Line 1 <span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className={`form-control ${errors.addressLine1 ? 'is-invalid' : ''}`}
-                    id="addressLine1"
-                    name="addressLine1"
-                    value={formData.addressLine1}
-                    onChange={handleChange}
-                    placeholder="Street address, P.O. box, company name"
-                  />
-                  {errors.addressLine1 && (
-                    <div className="invalid-feedback">{errors.addressLine1}</div>
-                  )}
-                </div>
-
-                {/* Address Line 2 */}
-                <div className="mb-3">
-                  <label htmlFor="addressLine2" className="form-label">
-                    Address Line 2
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="addressLine2"
-                    name="addressLine2"
-                    value={formData.addressLine2}
-                    onChange={handleChange}
-                    placeholder="Apartment, suite, unit, building, floor, etc."
-                  />
+                {/* Address Line 1 and Address Line 2 in same row */}
+                <div className="row">
+                  <div className="col-md-6 mb-3">
+                    <label htmlFor="addressLine1" className="form-label">
+                      Address Line 1 <span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className={`form-control ${errors.addressLine1 ? 'is-invalid' : ''}`}
+                      id="addressLine1"
+                      name="addressLine1"
+                      value={formData.addressLine1}
+                      onChange={handleChange}
+                      placeholder="Street address, P.O. box, company name"
+                    />
+                    {errors.addressLine1 && (
+                      <div className="invalid-feedback">{errors.addressLine1}</div>
+                    )}
+                  </div>
+                  <div className="col-md-6 mb-3">
+                    <label htmlFor="addressLine2" className="form-label">
+                      Address Line 2
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="addressLine2"
+                      name="addressLine2"
+                      value={formData.addressLine2}
+                      onChange={handleChange}
+                      placeholder="Apartment, suite, unit, building, floor, etc."
+                    />
+                  </div>
                 </div>
 
                 {/* City and Pin Code in same row */}
@@ -282,7 +281,7 @@ const UserForm: React.FC = () => {
                 </div>
 
                 {/* Buttons */}
-                <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+                <div className="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
                   <button
                     type="button"
                     className="btn btn-outline-secondary me-md-2"
