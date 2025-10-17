@@ -133,7 +133,7 @@ const UserForm: React.FC = () => {
                 {/* Name and Mobile Number in same row */}
                 <div className="row">
                   <div className="col-md-6 mb-3">
-                    <label htmlFor="name" className="form-label">
+                    <label htmlFor="name" className="form-label text-start w-100">
                       Full Name <span className="text-danger">*</span>
                     </label>
                     <input
@@ -146,11 +146,11 @@ const UserForm: React.FC = () => {
                       placeholder="Enter your full name"
                     />
                     {errors.name && (
-                      <div className="invalid-feedback">{errors.name}</div>
+                      <div className="invalid-feedback text-start">{errors.name}</div>
                     )}
                   </div>
                   <div className="col-md-6 mb-3">
-                    <label htmlFor="mobileNumber" className="form-label">
+                    <label htmlFor="mobileNumber" className="form-label text-start w-100">
                       Mobile Number <span className="text-danger">*</span>
                     </label>
                     <input
@@ -164,7 +164,7 @@ const UserForm: React.FC = () => {
                       maxLength={10}
                     />
                     {errors.mobileNumber && (
-                      <div className="invalid-feedback">{errors.mobileNumber}</div>
+                      <div className="invalid-feedback text-start">{errors.mobileNumber}</div>
                     )}
                   </div>
                 </div>
@@ -172,7 +172,7 @@ const UserForm: React.FC = () => {
                 {/* Email and Date of Birth in same row */}
                 <div className="row">
                   <div className="col-md-6 mb-3">
-                    <label htmlFor="email" className="form-label">
+                    <label htmlFor="email" className="form-label text-start w-100">
                       Email Address <span className="text-danger">*</span>
                     </label>
                     <input
@@ -185,11 +185,11 @@ const UserForm: React.FC = () => {
                       placeholder="Enter your email address"
                     />
                     {errors.email && (
-                      <div className="invalid-feedback">{errors.email}</div>
+                      <div className="invalid-feedback text-start">{errors.email}</div>
                     )}
                   </div>
                   <div className="col-md-6 mb-3">
-                    <label htmlFor="dateOfBirth" className="form-label">
+                    <label htmlFor="dateOfBirth" className="form-label text-start w-100">
                       Date of Birth <span className="text-danger">*</span>
                     </label>
                     <input
@@ -201,7 +201,7 @@ const UserForm: React.FC = () => {
                       onChange={handleChange}
                     />
                     {errors.dateOfBirth && (
-                      <div className="invalid-feedback">{errors.dateOfBirth}</div>
+                      <div className="invalid-feedback text-start">{errors.dateOfBirth}</div>
                     )}
                   </div>
                 </div>
@@ -209,7 +209,7 @@ const UserForm: React.FC = () => {
                 {/* Address Line 1 and Address Line 2 in same row */}
                 <div className="row">
                   <div className="col-md-6 mb-3">
-                    <label htmlFor="addressLine1" className="form-label">
+                    <label htmlFor="addressLine1" className="form-label text-start w-100">
                       Address Line 1 <span className="text-danger">*</span>
                     </label>
                     <input
@@ -222,11 +222,11 @@ const UserForm: React.FC = () => {
                       placeholder="Street address, P.O. box, company name"
                     />
                     {errors.addressLine1 && (
-                      <div className="invalid-feedback">{errors.addressLine1}</div>
+                      <div className="invalid-feedback text-start">{errors.addressLine1}</div>
                     )}
                   </div>
                   <div className="col-md-6 mb-3">
-                    <label htmlFor="addressLine2" className="form-label">
+                    <label htmlFor="addressLine2" className="form-label text-start w-100">
                       Address Line 2
                     </label>
                     <input
@@ -244,7 +244,7 @@ const UserForm: React.FC = () => {
                 {/* City and Pin Code in same row */}
                 <div className="row">
                   <div className="col-md-6 mb-3">
-                    <label htmlFor="city" className="form-label">
+                    <label htmlFor="city" className="form-label text-start w-100">
                       City <span className="text-danger">*</span>
                     </label>
                     <input
@@ -257,11 +257,11 @@ const UserForm: React.FC = () => {
                       placeholder="Enter your city"
                     />
                     {errors.city && (
-                      <div className="invalid-feedback">{errors.city}</div>
+                      <div className="invalid-feedback text-start">{errors.city}</div>
                     )}
                   </div>
                   <div className="col-md-6 mb-3">
-                    <label htmlFor="pinCode" className="form-label">
+                    <label htmlFor="pinCode" className="form-label text-start w-100">
                       Pin Code <span className="text-danger">*</span>
                     </label>
                     <input
@@ -275,7 +275,7 @@ const UserForm: React.FC = () => {
                       maxLength={6}
                     />
                     {errors.pinCode && (
-                      <div className="invalid-feedback">{errors.pinCode}</div>
+                      <div className="invalid-feedback text-start">{errors.pinCode}</div>
                     )}
                   </div>
                 </div>
@@ -298,7 +298,7 @@ const UserForm: React.FC = () => {
                 </div>
 
                 {isSubmitted && Object.keys(errors).length > 0 && (
-                  <div className="alert alert-danger mt-3" role="alert">
+                  <div className="alert alert-danger mt-3 text-start" role="alert">
                     Please fix the errors above before submitting.
                   </div>
                 )}
